@@ -1,0 +1,29 @@
+{
+  "name": "tcc-ebac-qe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "merge:reports": "npx mochawesome-merge \"cypress/reports/mochawesome/*.json\" -o cypress/reports/report.json",
+    "generate:report": "npx marge cypress/reports/report.json -f report -o cypress/reports",
+    "test:report": "npm run test || npm run generate:report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paloma-pro/TCC-EBAC-QE.git"
+  },
+  "author": "Paloma-Pro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paloma-pro/TCC-EBAC-QE/issues"
+  },
+  "homepage": "https://github.com/Paloma-pro/TCC-EBAC-QE#readme",
+  "description": "",
+  "dependencies": {
+    "cypress": "^15.4.0",
+    "cypress-html-reporter": "^11.0.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "puppeteer": "^24.25.0"
+  }
+}

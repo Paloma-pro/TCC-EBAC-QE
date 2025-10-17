@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-17T18:48:16.827Z",
+    "end": "2025-10-17T18:48:29.904Z",
+    "duration": 13077,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ed3e3b5-0df2-4c51-ae0e-56b53ced11ee",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c83e8842-b702-4c07-bbce-04e400d030cc",
+          "title": "Funcionalidade Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1- Deve fazer login com sucesso",
+              "fullTitle": "Funcionalidade Login 1- Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 7192,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.preencherEmail('teste@ebac.com.br');\nloginPage.preencherSenha('senha123');\nloginPage.submeterLogin();\ncy.get('#main p:nth-child(2)').should('have.text', '\\n\\tOlá, teste-4917 (não é teste-4917? Sair)');",
+              "err": {},
+              "uuid": "739b7b11-f341-4e11-8997-db1df1ec7dec",
+              "parentUUID": "c83e8842-b702-4c07-bbce-04e400d030cc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2- Deve exibir uma mensagem de erro ao inserir senha incorreta",
+              "fullTitle": "Funcionalidade Login 2- Deve exibir uma mensagem de erro ao inserir senha incorreta",
+              "timedOut": null,
+              "duration": 2591,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.preencherEmail('teste@ebac.com.br');\nloginPage.preencherSenha('senhaErrada');\nloginPage.submeterLogin();\ncy.get('#main li').should('have.text', '\\n\\t\\t\\tErro: A senha fornecida para o e-mail teste@ebac.com.br está incorreta. Perdeu a senha?\\t\\t');",
+              "err": {},
+              "uuid": "b8211d4a-2de6-4027-a5a3-d01ef3341f8a",
+              "parentUUID": "c83e8842-b702-4c07-bbce-04e400d030cc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3- Deve exibir uma mensagem de usuário não cadastrado",
+              "fullTitle": "Funcionalidade Login 3- Deve exibir uma mensagem de usuário não cadastrado",
+              "timedOut": null,
+              "duration": 1816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.preencherEmail('naoexiste@ebac.com.br');\nloginPage.preencherSenha('qualquerSenha');\nloginPage.submeterLogin();\ncy.get('#main li').should('have.text', '\\n\\t\\t\\tEndereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.\\t\\t');",
+              "err": {},
+              "uuid": "244f079f-f3fa-41c2-a940-d6500ad65517",
+              "parentUUID": "c83e8842-b702-4c07-bbce-04e400d030cc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "4- Deve exibir uma mensagem informando que um campo não foi preenchido",
+              "fullTitle": "Funcionalidade Login 4- Deve exibir uma mensagem informando que um campo não foi preenchido",
+              "timedOut": null,
+              "duration": 1285,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.preencherSenha('senha123');\nloginPage.submeterLogin();\ncy.get('#main li').should('have.text', '\\n\\t\\t\\tErro: Nome de usuário é obrigatório.\\t\\t');",
+              "err": {},
+              "uuid": "e7d0c749-ee63-4067-88c2-2dcd5ea43cf4",
+              "parentUUID": "c83e8842-b702-4c07-bbce-04e400d030cc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "739b7b11-f341-4e11-8997-db1df1ec7dec",
+            "b8211d4a-2de6-4027-a5a3-d01ef3341f8a",
+            "244f079f-f3fa-41c2-a940-d6500ad65517",
+            "e7d0c749-ee63-4067-88c2-2dcd5ea43cf4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12884,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "mochawesome_filename": "report.html"
+      },
+      "version": "6.3.0"
+    }
+  }
+}
