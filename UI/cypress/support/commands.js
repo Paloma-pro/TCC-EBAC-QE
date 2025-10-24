@@ -10,7 +10,14 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+
+const { loginPage } = require('../fixtures/page_objects/login.page');
+Cypress.Commands.add('login', (email, password) => {
+        cy.visit("minha-conta/")
+        loginPage.preencherEmail(email);
+        loginPage.preencherSenha(password);
+        loginPage.submeterLogin();
+})
 //
 //
 // -- This is a child command --
