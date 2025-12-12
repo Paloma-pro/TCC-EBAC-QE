@@ -35,6 +35,9 @@ class CadastroPage {
     get errorMessagePasswordMismatch() {
         return $('//android.widget.TextView[@text="Password and confirm password do not match"]');
     }
+    get homeScreenTitle() {
+        return $('//*[contains(@text, "EBAC")]');
+    }
     async cadastro(fisrtName, lastName, phoneNumber, email, password, confirmPassword) {
         await this.profilePage.waitForDisplayed({ timeout: 15000 });
         await this.profilePage.click();

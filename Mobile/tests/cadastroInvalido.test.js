@@ -1,10 +1,9 @@
 import cadastroPage from "../pages/cadastroPage";
 const { faker } = require('@faker-js/faker');
 
-describe('US-0001: cadastro', () => {
+describe('US-0001: Cadastro de Usuário', () => {
 
     it('Deve validar mensagens de erro ao tentar cadastrar com dados inválidos', async () => {
-        // await cadastroPage.profilePage.click();
         await cadastroPage.cadastro(
             faker.person.firstName(),
             faker.person.lastName(),
@@ -15,5 +14,4 @@ describe('US-0001: cadastro', () => {
        ); 
        expect (await cadastroPage.errorMessageEmailInvalid.isDisplayed()).toBe (true);
     });
-
 });
