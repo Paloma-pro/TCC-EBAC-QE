@@ -1,2 +1,6 @@
 # Dependências do Node.js
 node_modules
+
+# Relatórios Allure
+allure-results
+allure-report
