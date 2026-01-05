@@ -16,7 +16,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18.18.2'
       
       - name: Instalar dependências da API
         run: |
@@ -38,7 +38,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18.18.2'
 
       - name: Instalar Dependências da UI
         run: |
