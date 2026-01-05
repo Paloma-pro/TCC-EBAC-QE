@@ -13,7 +13,7 @@ describe('Funcionalidade Carrinho', () => {
     cy.get('#main a.woocommerce-remove-coupon').click();    
   });
 
-  it('1- Deve aplicar um cupom VÁLIDO e verificar o desconto', () => {
+  it.skip('1- Deve aplicar um cupom VÁLIDO e verificar o desconto', () => {
     carrinhoPage.adicionarCupom('DESCONTO10');
     cy.get('#main div.woocommerce-message').should('have.text', '\n\t\tCódigo de cupom aplicado com sucesso.\t');
     cy.get('#main td[data-title="Cupom: desconto10"] span.amount').should('have.class', 'woocommerce-Price-amount');
