@@ -9,9 +9,9 @@ describe('Funcionalidade Carrinho', () => {
     cy.visit("carrinho/")
   });
 
-  after(() => {
-    cy.get('#main a.woocommerce-remove-coupon').click();    
-  });
+  // after(() => {
+  //   cy.get('#main a.woocommerce-remove-coupon').click();    
+  // });
 
   it.skip('1- Deve aplicar um cupom VÁLIDO e verificar o desconto', () => {
     carrinhoPage.adicionarCupom('DESCONTO10');
