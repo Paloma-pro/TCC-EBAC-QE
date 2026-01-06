@@ -1,55 +1,55 @@
-# TCC-EBAC-QE: Automação Multinível para EBAC Shop
+# 🛒 EBAC Shop - Projeto Final de QA (TCC)
 
-[![EBAC QE](https://img.shields.io/badge/EBAC-Quality_Engineering-2ea44f)](https://ebaconline.com.br)
-[![WebdriverIO](https://img.shields.io/badge/Test%20Runner-WebdriverIO-EA5906)](https://webdriver.io)
-![Node Version](https://img.shields.io/badge/Node-18.x-green)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+![Cypress](https://img.shields.io/badge/Cypress-UI_Tests-green)
+![Appium](https://img.shields.io/badge/Appium-Mobile_Tests-blue)
+![Supertest](https://img.shields.io/badge/Supertest-API_Tests-yellow)
+![K6](https://img.shields.io/badge/K6-Performance-purple)
 
-Projeto de conclusão do curso de Engenharia de Qualidade de Software da EBAC, implementando automação de testes multinível para o e-commerce EBAC Shop.
+Este repositório contém o **Trabalho de Conclusão de Curso (TCC)** da formação **Engenheiro de Qualidade de Software** da EBAC. O projeto consiste numa estratégia completa de testes automatizados para validar o e-commerce "EBAC Shop", cobrindo interfaces Web, Mobile, API e Performance.
 
-## 🚀 Funcionalidades Principais
+---
 
-### Arquitetura de Testes
-- **Testes de API**: Validação de endpoints REST com métodos HTTP (GET/POST/PUT/DELETE)
-- **Testes Mobile**: Automação cross-platform para Android e iOS com Appium
-- **UI Web**: Testes de responsividade para versões desktop/mobile
-- **Performance**: Testes de carga com simulação de 100 VUs por 10 minutos
+## 🏗️ Arquitetura do Projeto
 
-### Pipeline CI/CD
-```yaml
-jobs:
-  api-tests:
-    runs-on: ubuntu-latest
-    steps: [checkout, npm install, npm run test:api]
-  
-  mobile-tests:
-    runs-on: macOS-latest
-    steps: [checkout, npm install, npm run test:mobile]
-  
-  performance:
-    runs-on: ubuntu-latest
-    steps: [checkout, npm install, npm run test:load]
-```
+O projeto foi estruturado em diretórios independentes para garantir a organização e a escalabilidade:
 
-## 🛠️ Stack Tecnológica
+* 📂 **API/**: Testes de integração e contrato (REST) utilizando **Supertest**, **Mocha** e **Chai**.
+* 📂 **UI/**: Testes End-to-End (E2E) para interface Web utilizando **Cypress** com padrão Page Object.
+* 📂 **Mobile/**: Automação Mobile (Android) utilizando **WebdriverIO** e **Appium**.
+* 📂 **Performance/**: Testes de carga utilizando **K6**.
+* 📂 **.github/workflows/**: Pipeline de Integração Contínua (CI) configurado no **GitHub Actions**.
 
-| Categoria        | Tecnologias                          |
-|------------------|--------------------------------------|
-| Automação        | WebdriverIO 7.20+, Appium, K6 0.45+  |
-| Validação        | Chai, Assert                        |
-| Infraestrutura   | GitHub Actions, Docker              |
-| Relatórios       | Allure Report                      |
-| Monitoramento    | Slack Webhooks                     |
+---
 
-## 📊 Métricas de Qualidade
-- Cobertura de testes: 95%+
-- Tempo médio de execução: 8min 30s
-- Threshold de performance: <500ms por requisição
+## 🚀 Tecnologias Utilizadas
 
-## ⚙️ Configuração
+* **Linguagem:** JavaScript / Node.js
+* **Web UI:** Cypress
+* **API:** Supertest + Mocha + Chai + Allure Reports
+* **Mobile:** WebdriverIO + Appium + UiAutomator2
+* **Performance:** K6 + Docker
+* **CI/CD:** GitHub Actions
+* **Massa de Dados:** Faker.js
+
+---
+
+## ⚙️ Pré-requisitos
+
+Para executar este projeto localmente, você precisará ter instalado:
+* [Node.js](https://nodejs.org/) (v18 recomendada)
+* [Docker Desktop](https://www.docker.com/) (Para ambiente local e testes de performance)
+* [Android Studio](https://developer.android.com/studio) (Para emuladores Mobile)
+* [Java JDK 8+](https://www.oracle.com/java/technologies/downloads/)
+
+---
+
+## 📦 Como Executar os Testes
+
+### 1. Testes de API
+Validação de endpoints, status codes e contratos.
+
 ```bash
+cd API
 npm install
-npm run setup
-npm test # Executa todos os testes
-```
-
-> **Nota**: Projeto utiliza workspaces do NPM para gerenciar módulos (`/api`, `/mobile`, `/web`)
+npm test
