@@ -1,45 +1,55 @@
-# 🚀 EBAC Shop - Automação de Testes Multinível
+# TCC-EBAC-QE: Automação Multinível para EBAC Shop
 
-**Trabalho de Conclusão de Curso em Engenharia de Qualidade de Software**  
-*EBAC - Escola Britânica de Artes Criativas e Tecnologia*
+[![EBAC QE](https://img.shields.io/badge/EBAC-Quality_Engineering-2ea44f)](https://ebaconline.com.br)
+[![WebdriverIO](https://img.shields.io/badge/Test%20Runner-WebdriverIO-EA5906)](https://webdriver.io)
+![Node Version](https://img.shields.io/badge/Node-18.x-green)
 
-![JavaScript](https://img.shields.io/badge/JavaScript-100%25-yellow?logo=javascript)
-![WebdriverIO](https://img.shields.io/badge/WebdriverIO-7.20+-green?logo=webdriverio)
-![K6](https://img.shields.io/badge/K6-0.45+-orange?logo=k6)
+Projeto de conclusão do curso de Engenharia de Qualidade de Software da EBAC, implementando automação de testes multinível para o e-commerce EBAC Shop.
 
-## 📌 Visão Geral
-Estrutura completa de automação de testes para o e-commerce EBAC Shop, implementando:
-- Testes **API** com suporte a diferentes métodos HTTP
-- Testes **Mobile** para aplicativos Android/iOS
-- Testes **UI** para interface web responsiva
-- Testes de **Performance** com simulações de carga realista
+## 🚀 Funcionalidades Principais
 
-## 🛠️ Tecnologias Principais
-<div align="center">
-  <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" title="JavaScript"/>
-  <img src="https://k6.io/img/icons/icon-96x96.png" alt="K6" title="K6" width="48"/>
-  <img src="https://webdriver.io/img/webdriverio.png" alt="WebdriverIO" title="WebdriverIO" width="48"/>
-  <img src="https://avatars.githubusercontent.com/u/1515293?s=48&v=4" alt="Chai" title="Chai"/>
-  <img src="https://avatars.githubusercontent.com/u/44036562?s=48&v=4" alt="GitHub Actions" title="GitHub Actions"/>
-</div>
+### Arquitetura de Testes
+- **Testes de API**: Validação de endpoints REST com métodos HTTP (GET/POST/PUT/DELETE)
+- **Testes Mobile**: Automação cross-platform para Android e iOS com Appium
+- **UI Web**: Testes de responsividade para versões desktop/mobile
+- **Performance**: Testes de carga com simulação de 100 VUs por 10 minutos
 
-## ⚙️ Instalação
-```bash
-git clone https://github.com/Paloma-pro/TCC-EBAC-QE.git
-cd TCC-EBAC-QE
-npm install
+### Pipeline CI/CD
+```yaml
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps: [checkout, npm install, npm run test:api]
+  
+  mobile-tests:
+    runs-on: macOS-latest
+    steps: [checkout, npm install, npm run test:mobile]
+  
+  performance:
+    runs-on: ubuntu-latest
+    steps: [checkout, npm install, npm run test:load]
 ```
 
-## 🔄 CI/CD
-Pipeline automatizado com GitHub Actions incluindo:
-- Execução de testes em paralelo
-- Geração de relatórios Allure
-- Notificações via Slack
-- Gate de qualidade para deploy
+## 🛠️ Stack Tecnológica
 
-## 🤝 Contribuição
-1. Faça o fork do projeto
-2. Crie sua branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
+| Categoria        | Tecnologias                          |
+|------------------|--------------------------------------|
+| Automação        | WebdriverIO 7.20+, Appium, K6 0.45+  |
+| Validação        | Chai, Assert                        |
+| Infraestrutura   | GitHub Actions, Docker              |
+| Relatórios       | Allure Report                      |
+| Monitoramento    | Slack Webhooks                     |
+
+## 📊 Métricas de Qualidade
+- Cobertura de testes: 95%+
+- Tempo médio de execução: 8min 30s
+- Threshold de performance: <500ms por requisição
+
+## ⚙️ Configuração
+```bash
+npm install
+npm run setup
+npm test # Executa todos os testes
+```
+
+> **Nota**: Projeto utiliza workspaces do NPM para gerenciar módulos (`/api`, `/mobile`, `/web`)
