@@ -1,55 +1,69 @@
-# 🛒 EBAC Shop - Projeto Final de QA (TCC)
+# 🚀 EBAC Shop - Automação de Testes End-to-End
 
-![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
-![Cypress](https://img.shields.io/badge/Cypress-UI_Tests-green)
-![Appium](https://img.shields.io/badge/Appium-Mobile_Tests-blue)
-![Supertest](https://img.shields.io/badge/Supertest-API_Tests-yellow)
-![K6](https://img.shields.io/badge/K6-Performance-purple)
+**Repositório do TCC em Engenharia de Qualidade de Software**  
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/Paloma-pro/TCC-EBAC-QE/main.yml?style=flat-square&logo=githubactions)](https://github.com/Paloma-pro/TCC-EBAC-QE/actions)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen?style=flat-square&logo=nodedotjs)](https://nodejs.org/)
 
-Este repositório contém o **Trabalho de Conclusão de Curso (TCC)** da formação **Engenheiro de Qualidade de Software** da EBAC. O projeto consiste numa estratégia completa de testes automatizados para validar o e-commerce "EBAC Shop", cobrindo interfaces Web, Mobile, API e Performance.
+Implementação de uma estratégia completa de testes automatizados para o e-commerce EBAC Shop, contemplando múltiplas camadas de qualidade:
 
----
+## 🧪 Abrangência de Testes
+| Camada          | Tecnologias                          | Cobertura               |
+|------------------|--------------------------------------|-------------------------|
+| **Web UI**       | Cypress + Page Objects               | Fluxos críticos de compra |
+| **Mobile**       | WebdriverIO + Appium (Android)       | Compatibilidade mobile  |
+| **API**          | Supertest + Mocha/Chai               | Integração & Contract   |
+| **Performance**  | K6 + Docker                          | Testes de carga         |
 
-## 🏗️ Arquitetura do Projeto
+## ⚙️ Funcionalidades Chave
+- **Pipeline CI/CD Integrado**
+  - Execução paralela de suites de teste no GitHub Actions
+  - Validação de PRs com relatórios Allure automatizados
+- **Data Factory**  
+  Geração dinâmica de massa de dados com Faker.js
+- **Cross Testing**
+  - 80+ casos de teste web/mobile
+  - 30+ testes de API REST
+  - 5 cenários de performance
 
-O projeto foi estruturado em diretórios independentes para garantir a organização e a escalabilidade:
-
-* 📂 **API/**: Testes de integração e contrato (REST) utilizando **Supertest**, **Mocha** e **Chai**.
-* 📂 **UI/**: Testes End-to-End (E2E) para interface Web utilizando **Cypress** com padrão Page Object.
-* 📂 **Mobile/**: Automação Mobile (Android) utilizando **WebdriverIO** e **Appium**.
-* 📂 **Performance/**: Testes de carga utilizando **K6**.
-* 📂 **.github/workflows/**: Pipeline de Integração Contínua (CI) configurado no **GitHub Actions**.
-
----
-
-## 🚀 Tecnologias Utilizadas
-
-* **Linguagem:** JavaScript / Node.js
-* **Web UI:** Cypress
-* **API:** Supertest + Mocha + Chai + Allure Reports
-* **Mobile:** WebdriverIO + Appium + UiAutomator2
-* **Performance:** K6 + Docker
-* **CI/CD:** GitHub Actions
-* **Massa de Dados:** Faker.js
-
----
-
-## ⚙️ Pré-requisitos
-
-Para executar este projeto localmente, você precisará ter instalado:
-* [Node.js](https://nodejs.org/) (v18 recomendada)
-* [Docker Desktop](https://www.docker.com/) (Para ambiente local e testes de performance)
-* [Android Studio](https://developer.android.com/studio) (Para emuladores Mobile)
-* [Java JDK 8+](https://www.oracle.com/java/technologies/downloads/)
-
----
-
-## 📦 Como Executar os Testes
-
-### 1. Testes de API
-Validação de endpoints, status codes e contratos.
-
+## 🛠 Pré-requisitos
 ```bash
-cd API
+Node.js 18.x+
+Java JDK 8 (para Appium)
+Android Studio (emuladores)
+Docker Desktop (testes K6)
+```
+
+## 📥 Instalação
+```bash
+git clone https://github.com/Paloma-pro/TCC-EBAC-QE.git
+cd TCC-EBAC-QE
 npm install
-npm test
+```
+
+## ▶️ Execução
+```bash
+# Testes Web
+npm run cy:run
+
+# Testes Mobile
+npm run wdio:android
+
+# Testes de Performance
+docker-compose up -d k6
+
+# Gerar relatórios
+allure serve allure-results
+```
+
+## 📊 Arquitetura do Projeto
+```
+TCC-EBAC-QE/
+├── web/               # Testes Cypress
+├── mobile/            # Config WebdriverIO
+├── api/               # Suites Supertest
+├── performance/       # Scripts K6
+└── github/            # Workflows CI/CD
+```
+
+## 📄 Licença
+Projeto acadêmico desenvolvido para a EBAC - Escola Britânica de Artes Criativas
