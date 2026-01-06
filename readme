@@ -1,4 +1,45 @@
-🛠️ TCC - Engenheiro de Qualidade de Software: Estrutura de Testes para o EBAC Shop
-Este repositório documenta o Trabalho de Conclusão de Curso (TCC) de Engenheiro de Qualidade de Software da EBAC, focado em elaborar uma estratégia de testes robusta e multinível para o e-commerce EBAC Shop (http://lojaebac.ebaconline.art.br/).
+# 🚀 EBAC Shop - Automação de Testes Multinível
 
-O objetivo é aplicar o conhecimento adquirido no curso para construir uma estrutura de automação completa, seguindo o fluxo de trabalho de um Quality Engineer (QE).
+**Trabalho de Conclusão de Curso em Engenharia de Qualidade de Software**  
+*EBAC - Escola Britânica de Artes Criativas e Tecnologia*
+
+![JavaScript](https://img.shields.io/badge/JavaScript-100%25-yellow?logo=javascript)
+![WebdriverIO](https://img.shields.io/badge/WebdriverIO-7.20+-green?logo=webdriverio)
+![K6](https://img.shields.io/badge/K6-0.45+-orange?logo=k6)
+
+## 📌 Visão Geral
+Estrutura completa de automação de testes para o e-commerce EBAC Shop, implementando:
+- Testes **API** com suporte a diferentes métodos HTTP
+- Testes **Mobile** para aplicativos Android/iOS
+- Testes **UI** para interface web responsiva
+- Testes de **Performance** com simulações de carga realista
+
+## 🛠️ Tecnologias Principais
+<div align="center">
+  <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" title="JavaScript"/>
+  <img src="https://k6.io/img/icons/icon-96x96.png" alt="K6" title="K6" width="48"/>
+  <img src="https://webdriver.io/img/webdriverio.png" alt="WebdriverIO" title="WebdriverIO" width="48"/>
+  <img src="https://avatars.githubusercontent.com/u/1515293?s=48&v=4" alt="Chai" title="Chai"/>
+  <img src="https://avatars.githubusercontent.com/u/44036562?s=48&v=4" alt="GitHub Actions" title="GitHub Actions"/>
+</div>
+
+## ⚙️ Instalação
+```bash
+git clone https://github.com/Paloma-pro/TCC-EBAC-QE.git
+cd TCC-EBAC-QE
+npm install
+```
+
+## 🔄 CI/CD
+Pipeline automatizado com GitHub Actions incluindo:
+- Execução de testes em paralelo
+- Geração de relatórios Allure
+- Notificações via Slack
+- Gate de qualidade para deploy
+
+## 🤝 Contribuição
+1. Faça o fork do projeto
+2. Crie sua branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
